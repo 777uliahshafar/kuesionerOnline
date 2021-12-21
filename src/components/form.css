@@ -18,8 +18,7 @@ input + label {
 input[type='text'],
 input[type='email'],
 input[type='password'],
-textarea,
-select {
+textarea {
   display: flex;
   width: 100%;
   padding: 6px 12px;
@@ -33,13 +32,73 @@ select {
   /* margin-bottom: 20px; */
 }
 
+select {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.control-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+.select-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+.label-1 {
+  display: grid;
+  width: 100px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+ul {
+  list-style-type: circle;
+}
+li {
+  margin-bottom: 0.1rem;
+}
+
 @media (min-width: 575.95px) {
   input[type='text'],
   input[type='email'],
   input[type='password'],
-  textarea,
-  select {
+  textarea {
     width: 400px;
+  }
+
+  .control-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 400px;
+  }
+  .select-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .label-1 {
+    display: grid;
+    width: 100px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  select {
+    display: grid;
+    width: 100px;
   }
 }
 

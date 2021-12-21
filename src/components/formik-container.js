@@ -33,6 +33,8 @@ function FormikContainer() {
     nomorHp: '',
     description: '',
     preferensi: '',
+    preferensi2: '',
+    preferensi3: '',
     likert: '',
     checkboxOption: ''
   }
@@ -88,18 +90,36 @@ function FormikContainer() {
               type="text"
               label="Nomor Handphone"
               name="nomorHp"
+              text="nomor anda tidak akan kami sebarluaskan"
             />
             <FormikControl
               control="textarea"
               label="Deskripsi"
               name="description"
             />
-            <FormikControl
-              control="select"
-              label="Pilih Preferensi"
-              name="preferensi"
-              options={dropdownOptions}
-            />
+            <Form.Text as="large">
+              Berapa nilai anda berikan untuk kombinasi elemen pada ruang
+            </Form.Text>
+            <div className="control-1">
+              <FormikControl
+                control="select"
+                label="profil 1"
+                name="preferensi"
+                options={dropdownOptions}
+              />
+              <FormikControl
+                control="select"
+                label="profil 2"
+                name="preferensi2"
+                options={dropdownOptions}
+              />
+              <FormikControl
+                control="select"
+                label="profil 3"
+                name="preferensi3"
+                options={dropdownOptions}
+              />
+            </div>
             <FormikControl
               control="radio"
               label="Pilih Skala"
