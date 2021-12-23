@@ -98,12 +98,9 @@ function FormikContainer() {
               label="Deskripsi"
               name="description"
             />
-            <Form.Text>
-              Berapa nilai anda berikan untuk kombinasi elemen pada ruang
-            </Form.Text>
             <div className="control-1">
               <div className="select-1">
-                <ProfilDesc item1="kucing" item2="anjing" item3="kuda" />
+                <ProfilDesc item1="toyota" item2="xenia" item3="honda" />
                 <FormikControl
                   control="select"
                   label="profil 1"
@@ -112,7 +109,7 @@ function FormikContainer() {
                 />
               </div>
               <div className="select-1">
-                <ProfilDesc item1="apel" item2="pisang" item3="mangga" />
+                <ProfilDesc item1="pisang" item2="mangga" item3="apel" />
                 <FormikControl
                   control="select"
                   label="profil 2"
@@ -122,7 +119,7 @@ function FormikContainer() {
               </div>
 
               <div className="select-1">
-                <ProfilDesc item1="yaris" item2="honda" item3="xenia" />
+                <ProfilDesc item1="iphone" item2="nokia" item3="samsung" />
                 <FormikControl
                   control="select"
                   label="profil 3"
@@ -141,7 +138,7 @@ function FormikContainer() {
             <FormikControl
               control="checkbox"
               label="Pilih checkbox"
-              name="checkboxOption"
+              name="checkboxOption[]"
               options={checkboxOptions}
             />
 

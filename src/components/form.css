@@ -4,7 +4,10 @@
 }
 
 label {
-  font-weight: bold;
+  font-family: Verdana, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  color: #d75f00;
   display: flex;
   margin-bottom: 5px;
 }
@@ -62,6 +65,19 @@ select {
   width: 100px;
   font-weight: bold;
   margin-bottom: 5px;
+}
+
+ul {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  list-style-type: circle;
+  list-style-position: inside;
+  margin: 0 3px 1px 0;
+  margin-left: 0;
+  margin-bottom: 1px;
+}
+li {
+  margin-bottom: 0.1rem;
 }
 
 @media (min-width: 575.95px) {
