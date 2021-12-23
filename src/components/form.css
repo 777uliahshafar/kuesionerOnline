@@ -64,13 +64,6 @@ select {
   margin-bottom: 5px;
 }
 
-ul {
-  list-style-type: circle;
-}
-li {
-  margin-bottom: 0.1rem;
-}
-
 @media (min-width: 575.95px) {
   input[type='text'],
   input[type='email'],

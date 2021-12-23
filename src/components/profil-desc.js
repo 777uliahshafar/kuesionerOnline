@@ -1,17 +1,13 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
 
-function ProfilDesc() {
+function ProfilDesc(props) {
+  const { item1, item2, item3 } = props
   return (
-    <Card border="light">
-      <Card.Text>
-        <ul>
-          <li>Coffee</li>
-          <li>Tea</li>
-          <li>Milk</li>
-        </ul>
-      </Card.Text>
-    </Card>
+    <ul>
+      <li>{item1}</li>
+      <li>{item2}</li>
+      <li>{item3}</li>
+    </ul>
   )
 }
 

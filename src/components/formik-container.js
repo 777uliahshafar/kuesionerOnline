@@ -3,6 +3,7 @@ import { Formik } from 'formik'
 import * as Yup from 'yup'
 import { Form, Container, Button } from 'react-bootstrap'
 import FormikControl from './formik-control'
+import ProfilDesc from './profil-desc'
 import { navigate } from 'gatsby'
 
 const dropdownOptions = [
@@ -97,29 +98,40 @@ function FormikContainer() {
               label="Deskripsi"
               name="description"
             />
-            <Form.Text as="large">
+            <Form.Text>
               Berapa nilai anda berikan untuk kombinasi elemen pada ruang
             </Form.Text>
             <div className="control-1">
-              <FormikControl
-                control="select"
-                label="profil 1"
-                name="preferensi"
-                options={dropdownOptions}
-              />
-              <FormikControl
-                control="select"
-                label="profil 2"
-                name="preferensi2"
-                options={dropdownOptions}
-              />
-              <FormikControl
-                control="select"
-                label="profil 3"
-                name="preferensi3"
-                options={dropdownOptions}
-              />
+              <div className="select-1">
+                <ProfilDesc item1="kucing" item2="anjing" item3="kuda" />
+                <FormikControl
+                  control="select"
+                  label="profil 1"
+                  name="preferensi"
+                  options={dropdownOptions}
+                />
+              </div>
+              <div className="select-1">
+                <ProfilDesc item1="apel" item2="pisang" item3="mangga" />
+                <FormikControl
+                  control="select"
+                  label="profil 2"
+                  name="preferensi2"
+                  options={dropdownOptions}
+                />
+              </div>
+
+              <div className="select-1">
+                <ProfilDesc item1="yaris" item2="honda" item3="xenia" />
+                <FormikControl
+                  control="select"
+                  label="profil 3"
+                  name="preferensi3"
+                  options={dropdownOptions}
+                />
+              </div>
             </div>
+
             <FormikControl
               control="radio"
               label="Pilih Skala"
