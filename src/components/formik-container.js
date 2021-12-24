@@ -88,7 +88,7 @@ function FormikContainer() {
 
             <FormikControl
               control="input"
-              type="text"
+              type="number"
               label="Nomor Handphone"
               name="nomorHp"
               text="nomor anda tidak akan kami sebarluaskan"
