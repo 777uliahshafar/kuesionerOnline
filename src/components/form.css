@@ -21,7 +21,8 @@ input + label {
 input[type='text'],
 input[type='email'],
 input[type='password'],
-textarea {
+textarea,
+select {
   display: flex;
   width: 100%;
   padding: 6px 12px;
@@ -35,7 +36,7 @@ textarea {
   /* margin-bottom: 20px; */
 }
 
-select {
+input[type='number'] {
   display: flex;
   flex-wrap: wrap;
   width: 100px;
@@ -84,7 +85,8 @@ li {
   input[type='text'],
   input[type='email'],
   input[type='password'],
-  textarea {
+  textarea,
+  select {
     width: 400px;
   }
 
@@ -105,7 +107,7 @@ li {
     font-weight: bold;
     margin-bottom: 5px;
   }
-  select {
+  input[type='number'] {
     display: grid;
     width: 100px;
   }

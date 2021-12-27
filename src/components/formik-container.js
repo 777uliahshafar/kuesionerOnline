@@ -88,7 +88,6 @@ function FormikContainer() {
 
             <FormikControl
               control="input"
-              type="number"
               label="Nomor Handphone"
               name="nomorHp"
               text="nomor anda tidak akan kami sebarluaskan"
@@ -102,29 +101,30 @@ function FormikContainer() {
               <div className="select-1">
                 <ProfilDesc item1="toyota" item2="xenia" item3="honda" />
                 <FormikControl
-                  control="select"
+                  control="input"
+                  type="number"
                   label="profil 1"
                   name="preferensi"
-                  options={dropdownOptions}
                 />
               </div>
               <div className="select-1">
                 <ProfilDesc item1="pisang" item2="mangga" item3="apel" />
+
                 <FormikControl
-                  control="select"
+                  control="input"
+                  type="number"
                   label="profil 2"
                   name="preferensi2"
-                  options={dropdownOptions}
                 />
               </div>
 
               <div className="select-1">
                 <ProfilDesc item1="iphone" item2="nokia" item3="samsung" />
                 <FormikControl
-                  control="select"
+                  control="input"
+                  type="number"
                   label="profil 3"
                   name="preferensi3"
-                  options={dropdownOptions}
                 />
               </div>
             </div>
