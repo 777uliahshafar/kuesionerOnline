@@ -1,11 +1,25 @@
 import React from 'react'
 import FormikControl from './formik-control'
-import { Card } from 'react-bootstrap'
+import { Card, Image } from 'react-bootstrap'
 import ProfilDesc from './profil-desc'
+import ruangA from '../images/ruanga.jpg'
+import ruangB from '../images/ruangb.jpg'
 
 function ConjForm() {
   return (
     <div>
+      <Card className="card-1" style={{ width: '13rem' }}>
+        <Image src={ruangA} alt="ruangA" fluid className="card-img-top" />
+        <Card.Text className="text-center">Ruang A </Card.Text>
+      </Card>
+
+      <Card className="card-1" style={{ width: '13rem' }}>
+        <Image src={ruangB} alt="ruangB" fluid className="card-img-top" />
+        <Card.Text className="text-center">Ruang B </Card.Text>
+      </Card>
+
+      <FormikControl control="textarea" label="Deskripsi" name="description" />
+
       <Card className="card-1" style={{ width: '16rem' }} border="warning" body>
         This is some text within a card body.
         <ProfilDesc

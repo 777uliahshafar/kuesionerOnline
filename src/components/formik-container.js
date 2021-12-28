@@ -6,20 +6,29 @@ import FormikControl from './formik-control'
 import ConjForm from './conj-form'
 import { navigate } from 'gatsby'
 
-/*
-const dropdownOptions = [
-  { key: 'Select an option', value: '' },
-  { key: 'Option 1', value: 'option1' },
-  { key: 'Option 2', value: 'option2' },
-  { key: 'Option 3', value: 'option3' }
-]*/
+const ruangOptions = [
+  { key: 'Pilih ruang ..', value: '' },
+  { key: 'Ruang A', value: 'ruangA' },
+  { key: 'Ruang B', value: 'ruangB' }
+]
 
-const radioOptions = [
-  { key: 'Option 1', value: 'rOption1' },
-  { key: 'Option 2', value: 'rOption2' },
-  { key: 'Option 3', value: 'rOption3' },
-  { key: 'Option 4', value: 'rOption4' },
-  { key: 'Option 5', value: 'rOption5' }
+const genderOptions = [
+  { key: 'Laki-laki', value: 'lakiLaki' },
+  { key: 'Perempuan', value: 'perempuan' }
+]
+
+const sukuOptions = [
+  { key: 'Bugis', value: 'bugis' },
+  { key: 'Makassar', value: 'makassar' },
+  { key: 'Toraja', value: 'toraja' },
+  { key: 'Lainnya', value: 'lainny' }
+]
+
+const pekOptions = [
+  { key: 'Karyawan', value: 'karyawan' },
+  { key: 'Pelajar', value: 'pelajar' },
+  { key: 'Wiraswasta', value: 'wiraswasta' },
+  { key: 'Blm bekerja', value: 'belumBekerja' }
 ]
 
 const checkboxOptions = [
@@ -33,10 +42,33 @@ const checkboxOptions = [
 function FormikContainer() {
   const initialValues = {
     nomorHp: '',
+    genderOptions: '',
+    sukuOptions: '',
+    usia: '',
+    pekOptions: '',
     description: '',
     pref: '',
     pref2: '',
     pref3: '',
+    pref4: '',
+    pref5: '',
+    pref6: '',
+    pref7: '',
+    pref8: '',
+    pref9: '',
+    pref10: '',
+    pref11: '',
+    pref12: '',
+    pref13: '',
+    pref14: '',
+    pref15: '',
+    pref16: '',
+    pref17: '',
+    pref18: '',
+    pref19: '',
+    pref20: '',
+    pref21: '',
+    pref22: '',
     likert: '',
     checkboxOption: ''
   }
@@ -115,19 +147,39 @@ function FormikContainer() {
               name="nomorHp"
               text="nomor anda tidak akan kami sebarluaskan"
             />
-            <FormikControl
-              control="textarea"
-              label="Deskripsi"
-              name="description"
-            />
-            <ConjForm />
 
             <FormikControl
               control="radio"
-              label="Pilih Skala"
-              name="likert"
-              options={radioOptions}
+              label="Jenis kelamin"
+              name="genderOptions"
+              options={genderOptions}
             />
+
+            <FormikControl
+              control="radio"
+              label="Suku"
+              name="sukuOptions"
+              options={sukuOptions}
+            />
+
+            <FormikControl control="input" label="Usia" name="usia" />
+
+            <FormikControl
+              control="radio"
+              label="Pekerjaan"
+              name="pekOptions"
+              options={pekOptions}
+            />
+
+            <FormikControl
+              control="select"
+              label="Mana diantara berikut ini ruang yang ada sukai"
+              name="ruangOptions"
+              options={ruangOptions}
+            />
+
+            <ConjForm />
+
             <FormikControl
               control="checkbox"
               label="Pilih checkbox"
