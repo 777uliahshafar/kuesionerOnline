@@ -130,5 +130,8 @@ li {
 }
 
 .error {
-  color: red;
+  color: #c92432;
+  font-size: 0.85em;
+  display: block;
+  margin: 4px 0;
 }

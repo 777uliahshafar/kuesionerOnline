@@ -1,17 +1,18 @@
 import React from 'react'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { Form, Container, Card, Button } from 'react-bootstrap'
+import { Form, Container, Button } from 'react-bootstrap'
 import FormikControl from './formik-control'
-import ProfilDesc from './profil-desc'
+import ConjForm from './conj-form'
 import { navigate } from 'gatsby'
 
+/*
 const dropdownOptions = [
   { key: 'Select an option', value: '' },
   { key: 'Option 1', value: 'option1' },
   { key: 'Option 2', value: 'option2' },
   { key: 'Option 3', value: 'option3' }
-]
+]*/
 
 const radioOptions = [
   { key: 'Option 1', value: 'rOption1' },
@@ -42,8 +43,28 @@ function FormikContainer() {
   const validationSchema = Yup.object({
     nomorHp: Yup.string().required('Diperlukan'),
     description: Yup.string().required('Diperlukan'),
-
-    pref: Yup.string().required('Diperlukan').max(3, 'maks 100')
+    pref: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref2: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref3: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref4: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref5: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref6: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref7: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref8: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref9: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref10: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref11: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref12: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref13: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref14: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref15: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref16: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref17: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref18: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref19: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref20: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref21: Yup.string().required('Diperlukan').max(3, 'maks 100'),
+    pref22: Yup.string().required('Diperlukan').max(3, 'maks 100')
   })
 
   const encode = (data) => {
@@ -99,62 +120,7 @@ function FormikContainer() {
               label="Deskripsi"
               name="description"
             />
-            <Card
-              className="card-1"
-              style={{ width: '16rem' }}
-              border="warning"
-              body
-            >
-              This is some text within a card body.
-              <ProfilDesc
-                item1="jumlah pohon"
-                item2="bentuk pohon "
-                item3="warna bunga"
-                item4="lebar jalan"
-                item5="permukaan jalan"
-                item6="jenis kursi"
-                item7="cahaya jalan"
-              />
-            </Card>
-            <div className="control-1">
-              <div className="select-1">
-                <ProfilDesc
-                  item1="sedikit"
-                  item2="cukup "
-                  item3="> 5 warna"
-                  item4="< 1.5m"
-                  item5="paving"
-                  item6="kursi piknik"
-                  item7="kurang"
-                />
-                <FormikControl
-                  control="input"
-                  type="number"
-                  label="profil 1"
-                  name="pref"
-                />
-              </div>
-              <div className="select-1">
-                <ProfilDesc item1="pisang" item2="mangga" item3="apel" />
-
-                <FormikControl
-                  control="input"
-                  type="number"
-                  label="profil 2"
-                  name="pref2"
-                />
-              </div>
-
-              <div className="select-1">
-                <ProfilDesc item1="iphone" item2="nokia" item3="samsung" />
-                <FormikControl
-                  control="input"
-                  type="number"
-                  label="profil 3"
-                  name="pref3"
-                />
-              </div>
-            </div>
+            <ConjForm />
 
             <FormikControl
               control="radio"
