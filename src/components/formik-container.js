@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { Form, Container, Button } from 'react-bootstrap'
+import { Form, Container, Card, Button } from 'react-bootstrap'
 import FormikControl from './formik-control'
 import ProfilDesc from './profil-desc'
 import { navigate } from 'gatsby'
@@ -33,15 +33,17 @@ function FormikContainer() {
   const initialValues = {
     nomorHp: '',
     description: '',
-    preferensi: '',
-    preferensi2: '',
-    preferensi3: '',
+    pref: '',
+    pref2: '',
+    pref3: '',
     likert: '',
     checkboxOption: ''
   }
   const validationSchema = Yup.object({
     nomorHp: Yup.string().required('Diperlukan'),
-    description: Yup.string().required('Diperlukan')
+    description: Yup.string().required('Diperlukan'),
+
+    pref: Yup.string().required('Diperlukan').max(3, 'maks 100')
   })
 
   const encode = (data) => {
@@ -97,14 +99,39 @@ function FormikContainer() {
               label="Deskripsi"
               name="description"
             />
+            <Card
+              className="card-1"
+              style={{ width: '16rem' }}
+              border="warning"
+              body
+            >
+              This is some text within a card body.
+              <ProfilDesc
+                item1="jumlah pohon"
+                item2="bentuk pohon "
+                item3="warna bunga"
+                item4="lebar jalan"
+                item5="permukaan jalan"
+                item6="jenis kursi"
+                item7="cahaya jalan"
+              />
+            </Card>
             <div className="control-1">
               <div className="select-1">
-                <ProfilDesc item1="toyota" item2="xenia" item3="honda" />
+                <ProfilDesc
+                  item1="sedikit"
+                  item2="cukup "
+                  item3="> 5 warna"
+                  item4="< 1.5m"
+                  item5="paving"
+                  item6="kursi piknik"
+                  item7="kurang"
+                />
                 <FormikControl
                   control="input"
                   type="number"
                   label="profil 1"
-                  name="preferensi"
+                  name="pref"
                 />
               </div>
               <div className="select-1">
@@ -114,7 +141,7 @@ function FormikContainer() {
                   control="input"
                   type="number"
                   label="profil 2"
-                  name="preferensi2"
+                  name="pref2"
                 />
               </div>
 
@@ -124,7 +151,7 @@ function FormikContainer() {
                   control="input"
                   type="number"
                   label="profil 3"
-                  name="preferensi3"
+                  name="pref3"
                 />
               </div>
             </div>
