@@ -18,20 +18,41 @@ function ConjForm() {
         <Card.Text className="text-center">Ruang B </Card.Text>
       </Card>
 
-      <FormikControl control="textarea" label="Deskripsi" name="description" />
-
-      <Card className="card-1" style={{ width: '16rem' }} border="warning" body>
-        This is some text within a card body.
-        <ProfilDesc
-          item1="jumlah pohon(phn)"
-          item2="bentuk(btk)  rindang(rdng) pohon(phn) "
-          item3="warna(wrn) bunga(bnga)"
-          item4="lebar(lbr) jalan(jln)"
-          item5="permukaan(mka) jalan(jln)"
-          item6="jenis(jns) kursi(krs)"
-          item7="cahaya(chy) jalan(jln)"
-        />
+      <Card style={{ width: '16rem' }} border="warning">
+        <Card.Title className="card-1" style={{ color: '#d75f00' }}>
+          Jelaskan fitur yang menarik pada ruang yang terpilih
+        </Card.Title>
+        <Card.Body className="text-muted">
+          <small>
+            cth: Saya memilih ruang A karena ramah pejalan kaki. Saya suka duduk
+            disini diantara pohon. Saya suka laut disini karena memberi suasana
+            menenangkan untuk orang yang lewat. Banyak juga tempat untuk duduk.
+          </small>
+        </Card.Body>
       </Card>
+
+      <FormikControl control="textarea" name="reason" rows={3} />
+
+      <Card style={{ width: '16rem' }} border="warning">
+        <Card.Body>
+          <Card.Title className="card-1" style={{ color: '#d75f00' }}>
+            Silakan nilai profil berikut ini dari skala 1-10
+          </Card.Title>
+          <Card.Text>
+            Ini adalah keterangan untuk kriteria profil-profil dibawah ini:{' '}
+            <ProfilDesc
+              item1="jumlah pohon(phn)"
+              item2="bentuk(btk)  rindang(rdng) pohon(phn) "
+              item3="warna(wrn) bunga(bnga)"
+              item4="lebar(lbr) jalan(jln)"
+              item5="permukaan(mka) jalan(jln)"
+              item6="jenis(jns) kursi(krs)"
+              item7="cahaya(chy) jalan(jln)"
+            />
+          </Card.Text>
+        </Card.Body>
+      </Card>
+
       <div className="control-1">
         <div className="select-1">
           <ProfilDesc

@@ -46,7 +46,7 @@ function FormikContainer() {
     sukuOptions: '',
     usia: '',
     pekOptions: '',
-    description: '',
+    reason: '',
     pref: '',
     pref2: '',
     pref3: '',
@@ -74,7 +74,7 @@ function FormikContainer() {
   }
   const validationSchema = Yup.object({
     nomorHp: Yup.string().required('Diperlukan'),
-    description: Yup.string().required('Diperlukan'),
+    reason: Yup.string().required('Diperlukan'),
     pref: Yup.string().required('Diperlukan').max(3, 'maks 100'),
     pref2: Yup.string().required('Diperlukan').max(3, 'maks 100'),
     pref3: Yup.string().required('Diperlukan').max(3, 'maks 100'),
