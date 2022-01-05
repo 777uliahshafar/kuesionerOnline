@@ -96,7 +96,20 @@ function FormikContainer() {
     jamOptions: ''
   }
   const validationSchema = Yup.object({
-    reason: Yup.string().required('Diperlukan')
+    genderOptions: Yup.string().required('Diperlukan'),
+    sukuOptions: Yup.string().required('Diperlukan'),
+    usia: Yup.string().required('Diperlukan'),
+    pekOptions: Yup.string().required('Diperlukan'),
+    ruangOptions: Yup.string().required('Diperlukan'),
+    reason: Yup.string().required('Diperlukan'),
+    asp1Options: Yup.string().required('Diperlukan'),
+    asp2Options: Yup.string().required('Diperlukan'),
+    asp3Options: Yup.string().required('Diperlukan'),
+    asp4Options: Yup.string().required('Diperlukan'),
+    asp5Options: Yup.string().required('Diperlukan'),
+    asp6Options: Yup.string().required('Diperlukan'),
+    asp7Options: Yup.string().required('Diperlukan'),
+    asp8Options: Yup.string().required('Diperlukan')
   })
 
   const encode = (data) => {
@@ -150,30 +163,30 @@ function FormikContainer() {
 
             <FormikControl
               control="radio"
-              label="Jenis kelamin"
+              label="Jenis kelamin*"
               name="genderOptions"
               options={genderOptions}
             />
 
             <FormikControl
               control="radio"
-              label="Suku"
+              label="Suku*"
               name="sukuOptions"
               options={sukuOptions}
             />
 
-            <FormikControl control="input" label="Usia" name="usia" />
+            <FormikControl control="input" label="Usia*" name="usia" />
 
             <FormikControl
               control="radio"
-              label="Pekerjaan"
+              label="Pekerjaan*"
               name="pekOptions"
               options={pekOptions}
             />
 
             <FormikControl
               control="select"
-              label="Mana diantara berikut ini ruang yang anda sukai"
+              label="Mana diantara berikut ini ruang yang anda sukai*"
               name="ruangOptions"
               options={ruangOptions}
             />
@@ -215,6 +228,7 @@ function FormikContainer() {
               name="jamOptions"
               options={jamOptions}
             />
+            <h5>* : wajib </h5>
 
             <Button
               variant="primary"

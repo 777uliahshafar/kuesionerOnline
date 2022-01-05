@@ -69,7 +69,7 @@ function ConjForm() {
       <Card style={{ width: '16rem' }} border="warning">
         <Card.Title className="card-1" style={{ width: '13rem' }}>
           Jelaskan hal yang menarik tentang fitur (karakteristik) dari ruang
-          yang anda pilih?
+          yang anda pilih?*
         </Card.Title>
         <Card.Body className="text-muted">
           <small>
@@ -84,7 +84,7 @@ function ConjForm() {
         <Card.Text className="card-2">
           Berikut ini pernyataan tentang sejumlah fitur, karakteristik, dan
           fungsi dari pantai senggol, mohon tunjukkan seberapa besar anda
-          setuju/tidak setuju dengan setiap pernyataan?
+          setuju/tidak setuju dengan setiap pernyataan?*
         </Card.Text>
         <Card.Text className="text-muted">
           <small>
@@ -153,7 +153,10 @@ function ConjForm() {
           sukai dalam ruang publik?
         </Card.Text>
         <Card.Text>
-          <small>Boleh dikosongkan jika tidak relevan</small>
+          <small>
+            Boleh dikosongkan jika tidak relevan, setiap kategori hanya ada satu
+            pilihan
+          </small>
         </Card.Text>
       </Card>
       <FormikControl
