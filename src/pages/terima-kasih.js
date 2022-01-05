@@ -8,11 +8,7 @@ import SEO from '../components/seo'
 const SecondPage = () => (
   <Layout>
     <SEO title="Page two" />
-    <h1>TERIMA KASIH TELAH MENGISI KUESIONER INI!</h1>
-    <p>
-      Semoga dengan pengisian kuesioner ini dapat memberikan sumbangsi terhadap
-      ilmu pengetahuan dan dunia praktisi perkotaan.
-    </p>
+    <h1>TERIMA KASIH TELAH MENGISI SURVEI INI!</h1>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
