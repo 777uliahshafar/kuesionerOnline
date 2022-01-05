@@ -175,7 +175,12 @@ function FormikContainer() {
               options={sukuOptions}
             />
 
-            <FormikControl control="input" label="Usia*" name="usia" />
+            <FormikControl
+              control="input"
+              type="number"
+              label="Usia*"
+              name="usia"
+            />
 
             <FormikControl
               control="radio"
