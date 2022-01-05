@@ -8,8 +8,8 @@ export default () => (
   <Layout>
     <SEO title="Home" />
     <p>
-      Terima kasih sebelumnya untuk meluangkan waktunya untuk mengisi kuesioner
-      ini.
+      Terima kasih sebelumnya untuk meluangkan waktunya untuk mengisi survei
+      pantai senggol ini.
     </p>
     <Form />
   </Layout>
