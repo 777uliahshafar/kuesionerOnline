@@ -6,15 +6,29 @@ import FormikControl from './formik-control'
 import ConjForm from './conj-form'
 import { navigate } from 'gatsby'
 
+const genderOptions = [
+  { key: 'Laki-laki', value: 'lakiLaki' },
+  { key: 'Perempuan', value: 'perempuan' }
+]
+
+const sukuOptions = [
+  { key: 'Bugis', value: 'bugis' },
+  { key: 'Makassar', value: 'makassar' },
+  { key: 'Toraja', value: 'toraja' },
+  { key: 'Lainnya', value: 'lainny' }
+]
+
+const pekOptions = [
+  { key: 'Karyawan', value: 'karyawan' },
+  { key: 'Pelajar', value: 'pelajar' },
+  { key: 'Wiraswasta', value: 'wiraswasta' },
+  { key: 'Blm bekerja', value: 'belumBekerja' }
+]
+
 const ruangOptions = [
   { key: 'Pilih ruang ..', value: '' },
   { key: 'Ruang A', value: 'ruangA' },
   { key: 'Ruang B', value: 'ruangB' }
-]
-
-const genderOptions = [
-  { key: 'Laki-laki', value: 'lakiLaki' },
-  { key: 'Perempuan', value: 'perempuan' }
 ]
 
 const serOptions = [
@@ -44,20 +58,6 @@ const kapOptions = [
   { key: 'Hari libur/akhir pekan', value: 'harilibur' }
 ]
 
-const sukuOptions = [
-  { key: 'Bugis', value: 'bugis' },
-  { key: 'Makassar', value: 'makassar' },
-  { key: 'Toraja', value: 'toraja' },
-  { key: 'Lainnya', value: 'lainny' }
-]
-
-const pekOptions = [
-  { key: 'Karyawan', value: 'karyawan' },
-  { key: 'Pelajar', value: 'pelajar' },
-  { key: 'Wiraswasta', value: 'wiraswasta' },
-  { key: 'Blm bekerja', value: 'belumBekerja' }
-]
-
 const jamOptions = [
   { key: 'Pagi', value: 'pagi' },
   { key: 'Siang/Sore', value: 'siang' },
@@ -72,6 +72,16 @@ function FormikContainer() {
     sukuOptions: '',
     usia: '',
     pekOptions: '',
+    ruangOptions: '',
+    reason: '',
+    asp1Options: '',
+    asp2Options: '',
+    asp3Options: '',
+    asp4Options: '',
+    asp5Options: '',
+    asp6Options: '',
+    asp7Options: '',
+    asp8Options: '',
     elm1Options: '',
     elm2Options: '',
     elm3Options: '',
@@ -83,9 +93,7 @@ function FormikContainer() {
     kendOptions: '',
     perjOptions: '',
     kapOptions: '',
-    jamOptions: '',
-    reason: '',
-    aksesOptions: ''
+    jamOptions: ''
   }
   const validationSchema = Yup.object({
     reason: Yup.string().required('Diperlukan')
@@ -202,9 +210,9 @@ function FormikContainer() {
             />
 
             <FormikControl
-              control="checkbox"
-              label="Jam berapa anda sering mengunjungi pantai senggol"
-              name="jamOptions[]"
+              control="radio"
+              label="Jam berapa anda sering mengunjungi pantai senggol "
+              name="jamOptions"
               options={jamOptions}
             />
 

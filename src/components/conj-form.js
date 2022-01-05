@@ -148,13 +148,17 @@ function ConjForm() {
         options={likertOptions}
       />
       <Card style={{ width: '16rem' }} border="warning">
-        <Card.Title className="card-1" style={{ width: '13rem' }}>
-          Apa fitur ruang yang anda sukai dalam ruang publik?
-        </Card.Title>
+        <Card.Text className="card-2" style={{ width: '13rem' }}>
+          Dibawah ini sejumlah fitur ruang publik, Apa fitur ruang yang anda
+          sukai dalam ruang publik?
+        </Card.Text>
+        <Card.Text>
+          <small>Boleh dikosongkan jika tidak relevan</small>
+        </Card.Text>
       </Card>
       <FormikControl
         control="checkbox"
-        label="jumlah pohon"
+        label="Jumlah pohon"
         name="elm1Options"
         options={elm1Options}
       />

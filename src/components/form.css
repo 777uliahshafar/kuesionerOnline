@@ -31,7 +31,7 @@ input + label {
 }
 .checkchild {
   flex: 1 0 42%;
-  background: #eee;
+  margin: auto;
 }
 
 input[type='text'],
