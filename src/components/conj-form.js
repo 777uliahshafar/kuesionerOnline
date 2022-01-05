@@ -1,9 +1,58 @@
 import React from 'react'
 import FormikControl from './formik-control'
 import { Card, Image } from 'react-bootstrap'
-import ProfilDesc from './profil-desc'
 import ruangA from '../images/ruanga.jpg'
 import ruangB from '../images/ruangb.jpg'
+
+const likertOptions = [
+  { key: '-1- ', value: '1' },
+  { key: '-2- ', value: '2' },
+  { key: '-3- ', value: '3' },
+  { key: '-4- ', value: '4' },
+  { key: '-5- ', value: '5' }
+]
+
+const elm1Options = [
+  { key: 'Sedikit phn', value: 'sdkitPhon' },
+  { key: 'Beberapa phn', value: 'bbrpPhon' },
+  { key: 'Banyak phn', value: 'bnykPhon' }
+]
+
+const elm2Options = [
+  { key: 'Tidak rindang', value: 'tdkRindng' },
+  { key: 'Cukup rindang', value: 'ckpRindng' },
+  { key: 'Sangat rindang', value: 'sgtRindng' }
+]
+
+const elm3Options = [
+  { key: '> 3m', value: '>3m' },
+  { key: '2-3m', value: '2-3m' },
+  { key: '< 1.5m', value: '<1.5m' }
+]
+
+const elm4Options = [
+  { key: 'Paving', value: 'paving' },
+  { key: 'Aspal', value: 'aspal' },
+  { key: 'Lantai keramik', value: 'tanah' }
+]
+
+const elm5Options = [
+  { key: '1 atau 2 warna', value: 'satuDuaWarna' },
+  { key: '3 atau 4 warna', value: 'tigaEmpatWarna' },
+  { key: '5 atau lebih warna', value: 'limaLebihWarna' }
+]
+
+const elm6Options = [
+  { key: 'Kursi bergerak', value: 'kursiBergerak' },
+  { key: 'Lesehan', value: 'lesehan' },
+  { key: 'Gazebo', value: 'gazebo' }
+]
+
+const elm7Options = [
+  { key: 'Kurang', value: 'kurang' },
+  { key: 'Sedang', value: 'sedang' },
+  { key: 'Tinggi', value: 'tinggi' }
+]
 
 function ConjForm() {
   return (
@@ -12,443 +61,144 @@ function ConjForm() {
         <Image src={ruangA} alt="ruangA" fluid className="card-img-top" />
         <Card.Text className="text-center">Ruang A </Card.Text>
       </Card>
-
       <Card className="card-1" style={{ width: '13rem' }}>
         <Image src={ruangB} alt="ruangB" fluid className="card-img-top" />
         <Card.Text className="text-center">Ruang B </Card.Text>
       </Card>
 
       <Card style={{ width: '16rem' }} border="warning">
-        <Card.Title className="card-1" style={{ color: '#d75f00' }}>
-          Jelaskan fitur yang menarik pada ruang yang terpilih
+        <Card.Title className="card-1" style={{ width: '13rem' }}>
+          Jelaskan hal yang menarik tentang fitur (karakteristik) dari ruang
+          yang anda pilih?
         </Card.Title>
         <Card.Body className="text-muted">
           <small>
-            cth: Saya memilih ruang A karena ramah pejalan kaki. Saya suka duduk
-            disini diantara pohon. Saya suka laut disini karena memberi suasana
-            menenangkan untuk orang yang lewat. Banyak juga tempat untuk duduk.
+            cth: ruang ini memiliki <u> jalan pedestrian</u> dan
+            <u> tidak ada pohon</u> dan kerumunan semak-semak jadi saya bisa
+            berjalan-jalan tanpa rasa takut.{' '}
           </small>
         </Card.Body>
       </Card>
-
-      <FormikControl control="textarea" name="reason" rows={3} />
-
+      <FormikControl control="textarea" name="reason" rows={4} />
       <Card style={{ width: '16rem' }} border="warning">
-        <Card.Body>
-          <Card.Title className="card-1" style={{ color: '#d75f00' }}>
-            Silakan nilai profil berikut ini dari skala 1-10
-          </Card.Title>
-          <Card.Text>
-            Ini adalah keterangan untuk kriteria profil-profil dibawah ini:{' '}
-            <ProfilDesc
-              item1="jumlah pohon(phn)"
-              item2="bentuk(btk)  rindang(rdng) pohon(phn) "
-              item3="warna(wrn) bunga(bnga)"
-              item4="lebar(lbr) jalan(jln)"
-              item5="permukaan(mka) jalan(jln)"
-              item6="jenis(jns) kursi(krs)"
-              item7="cahaya(chy) jalan(jln)"
-            />
-          </Card.Text>
-        </Card.Body>
+        <Card.Text className="card-2">
+          Berikut ini pernyataan tentang sejumlah fitur, karakteristik, dan
+          fungsi dari pantai senggol, mohon tunjukkan seberapa besar anda
+          setuju/tidak setuju dengan setiap pernyataan?
+        </Card.Text>
+        <Card.Text className="text-muted">
+          <small>
+            {' '}
+            Terdapat lima pilihan yang tersedia yaitu 1=sangat tidak setuju, 2=
+            tidak setuju, 3= netral, 4=setuju, 5=sangat setuju.
+          </small>
+        </Card.Text>
       </Card>
+      <FormikControl
+        control="radio"
+        label="Ruang publik memudahkan akses terhadap fasilitasnya"
+        name="asp1Options"
+        options={likertOptions}
+      />
 
-      <div className="control-1">
-        <div className="select-1">
-          <ProfilDesc
-            item1="banyak phn"
-            item2="sangat rndng"
-            item3="3-4 wrn bnga"
-            item4="2-3m lbr jln"
-            item5="aspal mka jln"
-            item6="kursi piknik"
-            item7="kurang chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 1"
-            name="pref"
-          />
-        </div>
+      <FormikControl
+        control="radio"
+        label="Ruang publik memberikan kebebasan menikmati pemandangan"
+        name="asp2Options"
+        options={likertOptions}
+      />
 
-        <div className="select-1">
-          <ProfilDesc
-            item1="sedikit phn"
-            item2="sangat rndng "
-            item3="1-2 wrn bnga"
-            item4="< 1.5m lbr jln"
-            item5="tanah mka jln"
-            item6="kursi piknik"
-            item7="kurang chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 2"
-            name="pref2"
-          />
-        </div>
+      <FormikControl
+        control="radio"
+        label="Sejumlah fitur dari ruang membuat ruang terasa berbahaya dan mengancam"
+        name="asp3Options"
+        options={likertOptions}
+      />
 
-        <div className="select-1">
-          <ProfilDesc
-            item1="sedikit phn"
-            item2="cukup"
-            item3="1-2 wrn bnga"
-            item4="2-3m lbr jln"
-            item5="paving"
-            item6="gazebo"
-            item7="kurang chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 3"
-            name="pref3"
-          />
-        </div>
+      <FormikControl
+        control="radio"
+        label="Ruang memiliki fasilitas untuk bermain dan menyalurkan hobi"
+        name="asp4Options"
+        options={likertOptions}
+      />
 
-        <div className="select-1">
-          <ProfilDesc
-            item1="bbrapa phn"
-            item2="cukup"
-            item3="3-4 wrn bnga"
-            item4="< 1.5m lbr jln"
-            item5="aspal"
-            item6="gazebo"
-            item7="kurang chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 4"
-            name="pref4"
-          />
-        </div>
+      <FormikControl
+        control="radio"
+        label="Tidak ada pohon, bunga, tanaman yang menarik di ruang publik"
+        name="asp5Options"
+        options={likertOptions}
+      />
 
-        <div className="select-1">
-          <ProfilDesc
-            item1="bbrapa phn"
-            item2="cukup "
-            item3="> 5 wrn bnga"
-            item4="> 3m lbr jln"
-            item5="tanah"
-            item6="gazebo"
-            item7="kurang chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 5"
-            name="pref5"
-          />
-        </div>
+      <FormikControl
+        control="radio"
+        label="Ruang mendukung untuk berinteraksi sosial"
+        name="asp6Options"
+        options={likertOptions}
+      />
+      <FormikControl
+        control="radio"
+        label="Ruang adalah area yang damai dan tenang"
+        name="asp7Options"
+        options={likertOptions}
+      />
+      <FormikControl
+        control="radio"
+        label="Ruang publik memiliki fasilitas-fasilitas yang saling berjauhan"
+        name="asp8Options"
+        options={likertOptions}
+      />
+      <Card style={{ width: '16rem' }} border="warning">
+        <Card.Title className="card-1" style={{ width: '13rem' }}>
+          Apa fitur ruang yang anda sukai dalam ruang publik?
+        </Card.Title>
+      </Card>
+      <FormikControl
+        control="checkbox"
+        label="jumlah pohon"
+        name="elm1Options"
+        options={elm1Options}
+      />
 
-        <div className="select-1">
-          <ProfilDesc
-            item1="banyak phn"
-            item2="sangat rndng "
-            item3="> 5 wrn bnga"
-            item4="> 3m lbr jln"
-            item5="paving"
-            item6="kursi lengkung"
-            item7="kurang chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 6"
-            name="pref6"
-          />
-        </div>
-        <div className="select-1">
-          <ProfilDesc
-            item1="sedikit phn"
-            item2="cukup"
-            item3="3-4 wrn bnga"
-            item4="2-3m lbr jln"
-            item5="aspal"
-            item6="kursi lengkung"
-            item7="kurang chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 7"
-            name="pref7"
-          />
-        </div>
+      <FormikControl
+        control="checkbox"
+        label="Bentuk pohon"
+        name="elm2Options"
+        options={elm2Options}
+      />
 
-        <div className="select-1">
-          <ProfilDesc
-            item1="bbrapa phn"
-            item2="sangat rndng "
-            item3="1-2 wrn bnga"
-            item4="< 1.5m lbr jln"
-            item5="tanah mka jln"
-            item6="kursi lengkung"
-            item7="kurang chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 8"
-            name="pref8"
-          />
-        </div>
+      <FormikControl
+        control="checkbox"
+        label="Lebar jalan"
+        name="elm3Options"
+        options={elm3Options}
+      />
 
-        <div className="select-1">
-          <ProfilDesc
-            item1="bbrapa phn"
-            item2="sangat rndng "
-            item3="3-4 wrn bnga"
-            item4="2-3m lbr jln"
-            item5="paving mka jln"
-            item6="kursi piknik"
-            item7="sedang chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 9"
-            name="pref9"
-          />
-        </div>
+      <FormikControl
+        control="checkbox"
+        label="Permukaan jalan"
+        name="elm4Options"
+        options={elm4Options}
+      />
 
-        <div className="select-1">
-          <ProfilDesc
-            item1="bbrapa phn"
-            item2="cukup "
-            item3="1-2 wrn bnga"
-            item4="> 3m lbr jln"
-            item5="aspal mka jln"
-            item6="kursi piknik"
-            item7="sedang chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 10"
-            name="pref10"
-          />
-        </div>
+      <FormikControl
+        control="checkbox"
+        label="Warna bunga"
+        name="elm5Options"
+        options={elm5Options}
+      />
 
-        <div className="select-1">
-          <ProfilDesc
-            item1="sedikit phn"
-            item2="cukup rdng"
-            item3="> 5 wrn bnga"
-            item4="2-3m lbr jln"
-            item5="tanah mka jln"
-            item6="kursi piknik"
-            item7="sedang chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 11"
-            name="pref11"
-          />
-        </div>
-
-        <div className="select-1">
-          <ProfilDesc
-            item1="sedikit phn"
-            item2="sangat rdng"
-            item3="3-4 wrn bnga"
-            item4="< 1.5m lbr jln"
-            item5="paving"
-            item6="gazebo"
-            item7="sedang chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 12"
-            name="pref12"
-          />
-        </div>
-
-        <div className="select-1">
-          <ProfilDesc
-            item1="banyak phn"
-            item2="cukup rdng"
-            item3="1-2 wrn bnga"
-            item4="> 3m lbr jln"
-            item5="aspal mka jln"
-            item6="gazebo"
-            item7="sedang chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 13"
-            name="pref13"
-          />
-        </div>
-
-        <div className="select-1">
-          <ProfilDesc
-            item1="banyak phn"
-            item2="sangat rndng "
-            item3="1-2 wrn bnga"
-            item4="2-3m lbr jln"
-            item5="tanah mka jln"
-            item6="gazebo"
-            item7="sedang chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 14"
-            name="pref14"
-          />
-        </div>
-
-        <div className="select-1">
-          <ProfilDesc
-            item1="bbrapa phn"
-            item2="sangat rndng"
-            item3="> 5 wrn bnga"
-            item4="< 1.5m lbr jln"
-            item5="aspal mk jln"
-            item6="kursi lengkung"
-            item7="sedang chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 15"
-            name="pref15"
-          />
-        </div>
-
-        <div className="select-1">
-          <ProfilDesc
-            item1="sedikit phn"
-            item2="cukup rndng"
-            item3="3-4 wrn bnga"
-            item4="< 1.5m lbr jln"
-            item5="paving mka jln"
-            item6="kursi lengkung"
-            item7="sedang chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 16"
-            name="pref16"
-          />
-        </div>
-
-        <div className="select-1">
-          <ProfilDesc
-            item1="banyak phn"
-            item2="cukup rndng"
-            item3="> 5 wrn bnga"
-            item4="< 1.5m lbr jln"
-            item5="paving"
-            item6="kursi piknik"
-            item7="tinggii chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 17"
-            name="pref17"
-          />
-        </div>
-
-        <div className="select-1">
-          <ProfilDesc
-            item1="sedikit phn"
-            item2="sangat rndng"
-            item3="1-2 wrn bnga"
-            item4="> 3m lbr jln"
-            item5="aspal"
-            item6="kursi piknik"
-            item7="tinggi chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 18"
-            name="pref18"
-          />
-        </div>
-
-        <div className="select-1">
-          <ProfilDesc
-            item1="sedikit phn"
-            item2="sangat rndng "
-            item3="> 5 wrn phn"
-            item4="2-3m lbr jln"
-            item5="aspal"
-            item6="gazebo"
-            item7="tinggi chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 19"
-            name="pref19"
-          />
-        </div>
-
-        <div className="select-1">
-          <ProfilDesc
-            item1="bbrapa phn"
-            item2="sangat rndng "
-            item3="3-4 wrn bnga"
-            item4="> 3m lbr jln"
-            item5="tanah mka jln"
-            item6="gazebo"
-            item7="tinggi chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 20"
-            name="pref20"
-          />
-        </div>
-
-        <div className="select-1">
-          <ProfilDesc
-            item1="bbrapa phn"
-            item2="cukup rndng"
-            item3="1-2 wrn bnga"
-            item4="2-3m lbr jln"
-            item5="paving"
-            item6="kursi lengkung"
-            item7="tinggi chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 21"
-            name="pref21"
-          />
-        </div>
-
-        <div className="select-1">
-          <ProfilDesc
-            item1="banyak phn "
-            item2="cukup rndng"
-            item3="3-4 wrn bnga"
-            item4="< 1.5m lbr jln"
-            item5="tanah mka jln"
-            item6="kursi lengkung"
-            item7="tinggi chy"
-          />
-          <FormikControl
-            control="input"
-            type="number"
-            label="profil 22"
-            name="pref22"
-          />
-        </div>
-      </div>
+      <FormikControl
+        control="checkbox"
+        label="Jenis kursi"
+        name="elm6Options"
+        options={elm6Options}
+      />
+      <FormikControl
+        control="checkbox"
+        label="Pencahayaan jalan"
+        name="elm7Options"
+        options={elm7Options}
+      />
     </div>
   )
 }

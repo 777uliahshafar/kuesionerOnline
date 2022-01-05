@@ -17,6 +17,33 @@ const genderOptions = [
   { key: 'Perempuan', value: 'perempuan' }
 ]
 
+const serOptions = [
+  { key: 'Jarang', value: 'jarang' },
+  { key: 'Sekali sebulan', value: 'sekali/bulan' },
+  { key: 'Sekali seminggu', value: 'sekali/minggu' },
+  { key: 'Tiap hari', value: 'tiaphari' }
+]
+
+const kendOptions = [
+  { key: 'Jalan kaki', value: 'jalankaki' },
+  { key: 'Sepeda', value: 'sepeda' },
+  { key: 'Sepeda Motor', value: 'motor' },
+  { key: 'Mobil', value: 'mobil' }
+]
+
+const perjOptions = [
+  { key: 'Kurang 5mnt', value: 'kurang 5mnt' },
+  { key: '5mnt-15mnt', value: '5mnt-15mnt' },
+  { key: '15mnt-30mnt', value: '15mnt-30mnt' },
+  { key: '30-60mnt', value: '30-60mnt' }
+]
+
+const kapOptions = [
+  { key: 'Setiap hari', value: 'setiaphari' },
+  { key: 'Akhir pekan', value: 'akhirpekan' },
+  { key: 'Hari libur/akhir pekan', value: 'harilibur' }
+]
+
 const sukuOptions = [
   { key: 'Bugis', value: 'bugis' },
   { key: 'Makassar', value: 'makassar' },
@@ -31,72 +58,37 @@ const pekOptions = [
   { key: 'Blm bekerja', value: 'belumBekerja' }
 ]
 
-const checkboxOptions = [
-  { key: 'Option 1', value: 'cOption1' },
-  { key: 'Option 2', value: 'cOption2' },
-  { key: 'Option 3', value: 'cOption3' },
-  { key: 'Option 4', value: 'cOption4' },
-  { key: 'Option 5', value: 'cOption5' }
+const jamOptions = [
+  { key: 'Pagi', value: 'pagi' },
+  { key: 'Siang/Sore', value: 'siang' },
+  { key: 'Malam', value: 'malam' },
+  { key: 'kapan pun', value: 'kapanpun' }
 ]
 
 function FormikContainer() {
   const initialValues = {
-    nomorHp: '',
+    namaPanggil: '',
     genderOptions: '',
     sukuOptions: '',
     usia: '',
     pekOptions: '',
+    elm1Options: '',
+    elm2Options: '',
+    elm3Options: '',
+    elm4Options: '',
+    elm5Options: '',
+    elm6Options: '',
+    elm7Options: '',
+    serOptions: '',
+    kendOptions: '',
+    perjOptions: '',
+    kapOptions: '',
+    jamOptions: '',
     reason: '',
-    pref: '',
-    pref2: '',
-    pref3: '',
-    pref4: '',
-    pref5: '',
-    pref6: '',
-    pref7: '',
-    pref8: '',
-    pref9: '',
-    pref10: '',
-    pref11: '',
-    pref12: '',
-    pref13: '',
-    pref14: '',
-    pref15: '',
-    pref16: '',
-    pref17: '',
-    pref18: '',
-    pref19: '',
-    pref20: '',
-    pref21: '',
-    pref22: '',
-    likert: '',
-    checkboxOption: ''
+    aksesOptions: ''
   }
   const validationSchema = Yup.object({
-    nomorHp: Yup.string().required('Diperlukan'),
-    reason: Yup.string().required('Diperlukan'),
-    pref: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref2: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref3: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref4: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref5: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref6: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref7: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref8: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref9: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref10: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref11: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref12: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref13: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref14: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref15: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref16: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref17: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref18: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref19: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref20: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref21: Yup.string().required('Diperlukan').max(3, 'maks 100'),
-    pref22: Yup.string().required('Diperlukan').max(3, 'maks 100')
+    reason: Yup.string().required('Diperlukan')
   })
 
   const encode = (data) => {
@@ -140,12 +132,12 @@ function FormikContainer() {
               </label>
             </p>
             <input type="hidden" name="form-name" value="formik form v1" />
-
+            <h2>Data diri</h2>
             <FormikControl
               control="input"
-              label="Nomor Handphone"
-              name="nomorHp"
-              text="nomor anda tidak akan kami sebarluaskan"
+              label="Nama"
+              name="namaPanggil"
+              text="data diri anda tidak akan disebarluaskan"
             />
 
             <FormikControl
@@ -173,18 +165,47 @@ function FormikContainer() {
 
             <FormikControl
               control="select"
-              label="Mana diantara berikut ini ruang yang ada sukai"
+              label="Mana diantara berikut ini ruang yang anda sukai"
               name="ruangOptions"
               options={ruangOptions}
             />
 
             <ConjForm />
 
+            <h2>Frekuensi kunjungan</h2>
+            <FormikControl
+              control="radio"
+              label="Seberapa sering anda mengunjungi tepi laut"
+              name="serOptions"
+              options={serOptions}
+            />
+
+            <FormikControl
+              control="radio"
+              label="Kendaraan apa yang anda gunakan untuk ke tepi laut"
+              name="kendOptions"
+              options={kendOptions}
+            />
+
+            <FormikControl
+              control="radio"
+              label="Berapa lama perjalanan anda menuju pantai senggol"
+              name="perjOptions"
+              options={perjOptions}
+            />
+
+            <FormikControl
+              control="radio"
+              label="Kapan saja anda mengunjungi tepi laut"
+              name="kapOptions"
+              options={kapOptions}
+            />
+
             <FormikControl
               control="checkbox"
-              label="Pilih checkbox"
-              name="checkboxOption[]"
-              options={checkboxOptions}
+              label="Jam berapa anda sering mengunjungi pantai senggol"
+              name="jamOptions[]"
+              options={jamOptions}
             />
 
             <Button
