@@ -234,6 +234,10 @@ function FormikContainer() {
               options={jamOptions}
             />
             <h5>* : wajib </h5>
+            <p style={{ color: '#444' }}>
+              &gt;&gt; tombol kirimkan tidak akan aktif bila yang wajib belum
+              terisi
+            </p>
 
             <Button
               variant="primary"
