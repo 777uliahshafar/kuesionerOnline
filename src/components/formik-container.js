@@ -124,7 +124,7 @@ function FormikContainer() {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'formik form v1', ...values })
+      body: encode({ 'form-name': 'city form', ...values })
     })
       .then(() => navigate('/terima-kasih'))
       .catch((error) => alert(error))
@@ -140,7 +140,7 @@ function FormikContainer() {
       >
         {(formik) => (
           <Form
-            name="formik form v1"
+            name="city form"
             method="post"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
@@ -152,7 +152,7 @@ function FormikContainer() {
                 I love honeypot : <input name="bot-field" />
               </label>
             </p>
-            <input type="hidden" name="form-name" value="formik form v1" />
+            <input type="hidden" name="form-name" value="city form" />
             <h2>Data diri</h2>
             <FormikControl
               control="input"

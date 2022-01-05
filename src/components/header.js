@@ -47,7 +47,7 @@ const Header = ({ siteTitle }) => {
               fontFamily: `monospace`
             }}
           >
-            Isian anda menentukan arah perkembangan kota Parepare
+            Survei ini terkait fitur (karakteristik) ruang di Pantai Senggol
           </p>
         </div>
       </div>
