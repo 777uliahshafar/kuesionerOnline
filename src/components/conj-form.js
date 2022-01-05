@@ -13,9 +13,9 @@ const likertOptions = [
 ]
 
 const elm1Options = [
-  { key: 'Sedikit phn', value: 'sdkitPhon' },
-  { key: 'Beberapa phn', value: 'bbrpPhon' },
-  { key: 'Banyak phn', value: 'bnykPhon' }
+  { key: 'Sedikit pohon', value: 'sdkitPhon' },
+  { key: 'Beberapa pohon', value: 'bbrpPhon' },
+  { key: 'Banyak pohon', value: 'bnykPhon' }
 ]
 
 const elm2Options = [
@@ -149,13 +149,13 @@ function ConjForm() {
       />
       <Card style={{ width: '16rem' }} border="warning">
         <Card.Text className="card-2" style={{ width: '13rem' }}>
-          Dibawah ini sejumlah fitur ruang publik, Apa fitur ruang yang anda
-          sukai dalam ruang publik?
+          Dibawah ini sejumlah fitur (karakteristik) dari ruang publik, pilih
+          fitur ruang yang anda paling sukai dalam ruang publik?
         </Card.Text>
         <Card.Text>
           <small>
-            Boleh dikosongkan jika tidak relevan, setiap kategori hanya ada satu
-            pilihan
+            Setiap kategori hanya ada satu pilihan, beberapa kategori bisa
+            dikosongkan jika tidak relevan.
           </small>
         </Card.Text>
       </Card>
