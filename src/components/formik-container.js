@@ -156,7 +156,7 @@ function FormikContainer() {
             <h2>Data diri</h2>
             <FormikControl
               control="input"
-              label="Nama"
+              label="Nama(opsional)"
               name="namaPanggil"
               text="data diri anda tidak akan disebarluaskan"
             />

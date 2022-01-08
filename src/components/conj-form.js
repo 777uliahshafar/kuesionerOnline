@@ -96,54 +96,54 @@ function ConjForm() {
       </Card>
       <FormikControl
         control="radio"
-        label="Ruang publik memudahkan akses terhadap fasilitasnya"
+        label="Ruang publik memudahkan akses terhadap fasilitasnya*"
         name="asp1Options"
         options={likertOptions}
       />
 
       <FormikControl
         control="radio"
-        label="Ruang publik memberikan kebebasan menikmati pemandangan"
+        label="Ruang publik memberikan kebebasan menikmati pemandangan*"
         name="asp2Options"
         options={likertOptions}
       />
 
       <FormikControl
         control="radio"
-        label="Sejumlah fitur dari ruang membuat ruang terasa berbahaya dan mengancam"
+        label="Sejumlah fitur dari ruang membuat ruang terasa berbahaya dan mengancam*"
         name="asp3Options"
         options={likertOptions}
       />
 
       <FormikControl
         control="radio"
-        label="Ruang memiliki fasilitas untuk bermain dan menyalurkan hobi"
+        label="Ruang memiliki fasilitas untuk bermain dan menyalurkan hobi*"
         name="asp4Options"
         options={likertOptions}
       />
 
       <FormikControl
         control="radio"
-        label="Tidak ada pohon, bunga, tanaman yang menarik di ruang publik"
+        label="Tidak ada pohon, bunga, tanaman yang menarik di ruang publik*"
         name="asp5Options"
         options={likertOptions}
       />
 
       <FormikControl
         control="radio"
-        label="Ruang mendukung untuk berinteraksi sosial"
+        label="Ruang mendukung untuk berinteraksi sosial*"
         name="asp6Options"
         options={likertOptions}
       />
       <FormikControl
         control="radio"
-        label="Ruang adalah area yang damai dan tenang"
+        label="Ruang adalah area yang damai dan tenang*"
         name="asp7Options"
         options={likertOptions}
       />
       <FormikControl
         control="radio"
-        label="Ruang publik memiliki fasilitas-fasilitas yang saling berjauhan"
+        label="Ruang publik memiliki fasilitas-fasilitas yang saling berjauhan*"
         name="asp8Options"
         options={likertOptions}
       />
