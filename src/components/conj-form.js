@@ -12,46 +12,12 @@ const likertOptions = [
   { key: '-5- ', value: '5' }
 ]
 
-const elm1Options = [
-  { key: 'Sedikit pohon', value: 'sdkitPhon' },
-  { key: 'Beberapa pohon', value: 'bbrpPhon' },
-  { key: 'Banyak pohon', value: 'bnykPhon' }
-]
-
-const elm2Options = [
-  { key: 'Tidak rindang', value: 'tdkRindng' },
-  { key: 'Cukup rindang', value: 'ckpRindng' },
-  { key: 'Sangat rindang', value: 'sgtRindng' }
-]
-
-const elm3Options = [
-  { key: '> 3m', value: '>3m' },
-  { key: '2-3m', value: '2-3m' },
-  { key: '< 1.5m', value: '<1.5m' }
-]
-
-const elm4Options = [
-  { key: 'Paving', value: 'paving' },
-  { key: 'Aspal', value: 'aspal' },
-  { key: 'Lantai keramik', value: 'tanah' }
-]
-
-const elm5Options = [
-  { key: '1 atau 2 warna', value: 'satuDuaWarna' },
-  { key: '3 atau 4 warna', value: 'tigaEmpatWarna' },
-  { key: '5 atau lebih warna', value: 'limaLebihWarna' }
-]
-
-const elm6Options = [
-  { key: 'Kursi bergerak', value: 'kursiBergerak' },
-  { key: 'Lesehan', value: 'lesehan' },
-  { key: 'Gazebo', value: 'gazebo' }
-]
-
-const elm7Options = [
-  { key: 'Kurang', value: 'kurang' },
-  { key: 'Sedang', value: 'sedang' },
-  { key: 'Tinggi', value: 'tinggi' }
+const elmOptions = [
+  { key: 'Jumlah pohon', value: 'jmlhPhn' },
+  { key: 'Kerindangan pohon', value: 'bntukPhn' },
+  { key: 'Lebar jalan pejalan kaki', value: 'lbrJln' },
+  { key: 'Permukaan jalan pejalan kaki', value: 'PermJln' },
+  { key: 'Tingkat pencahayaan', value: 'TngkChy' }
 ]
 
 function ConjForm() {
@@ -68,8 +34,7 @@ function ConjForm() {
 
       <Card style={{ width: '16rem' }} border="warning">
         <Card.Title className="card-1" style={{ width: '13rem' }}>
-          Jelaskan hal yang menarik tentang fitur (karakteristik) dari ruang
-          yang anda pilih?*
+          Mengapa anda memilih ruang tersebut?*
         </Card.Title>
         <Card.Body className="text-muted">
           <small>
@@ -82,9 +47,8 @@ function ConjForm() {
       <FormikControl control="textarea" name="reason" rows={4} />
       <Card style={{ width: '16rem' }} border="warning">
         <Card.Text className="card-2">
-          Berikut ini pernyataan tentang sejumlah fitur, karakteristik, dan
-          fungsi dari pantai senggol, mohon tunjukkan seberapa besar anda
-          setuju/tidak setuju dengan setiap pernyataan?*
+          Seberapa besar anda setuju/tidak setuju terhadap pernyatan tentang
+          ruang publik pantai senggol?
         </Card.Text>
         <Card.Text className="text-muted">
           <small>
@@ -96,115 +60,43 @@ function ConjForm() {
       </Card>
       <FormikControl
         control="radio"
-        label="Ruang publik memudahkan akses terhadap fasilitasnya*"
+        label="Ruang publik memudahkan akses terhadap fasilitasnya"
         name="asp1Options"
         options={likertOptions}
       />
 
       <FormikControl
         control="radio"
-        label="Ruang publik memberikan kebebasan menikmati pemandangan*"
+        label="Ruang publik memberikan kebebasan menikmati pemandangan"
         name="asp2Options"
         options={likertOptions}
       />
 
       <FormikControl
         control="radio"
-        label="Sejumlah fitur dari ruang membuat ruang terasa berbahaya dan mengancam*"
+        label="Ruang memiliki fasilitas untuk bermain dan menyalurkan hobi"
         name="asp3Options"
         options={likertOptions}
       />
 
       <FormikControl
         control="radio"
-        label="Ruang memiliki fasilitas untuk bermain dan menyalurkan hobi*"
+        label="Ruang adalah area yang damai dan tenang"
         name="asp4Options"
-        options={likertOptions}
-      />
-
-      <FormikControl
-        control="radio"
-        label="Tidak ada pohon, bunga, tanaman yang menarik di ruang publik*"
-        name="asp5Options"
-        options={likertOptions}
-      />
-
-      <FormikControl
-        control="radio"
-        label="Ruang mendukung untuk berinteraksi sosial*"
-        name="asp6Options"
-        options={likertOptions}
-      />
-      <FormikControl
-        control="radio"
-        label="Ruang adalah area yang damai dan tenang*"
-        name="asp7Options"
-        options={likertOptions}
-      />
-      <FormikControl
-        control="radio"
-        label="Ruang publik memiliki fasilitas-fasilitas yang saling berjauhan*"
-        name="asp8Options"
         options={likertOptions}
       />
       <Card style={{ width: '16rem' }} border="warning">
         <Card.Text className="card-2" style={{ width: '13rem' }}>
-          Dibawah ini sejumlah fitur (karakteristik) dari ruang publik, pilih
-          fitur ruang yang anda paling sukai dalam ruang publik?
-        </Card.Text>
-        <Card.Text>
-          <small>
-            Setiap kategori hanya ada satu pilihan, beberapa kategori bisa
-            dikosongkan jika tidak relevan.
-          </small>
+          Pilih karakteristik elemen dari pantai senggol yang mendukung alasan
+          anda memilih ruang?
+          <small>(banyak pilihan diperbolehkan)</small>
         </Card.Text>
       </Card>
       <FormikControl
         control="checkbox"
-        label="Jumlah pohon"
-        name="elm1Options"
-        options={elm1Options}
-      />
-
-      <FormikControl
-        control="checkbox"
-        label="Bentuk pohon"
-        name="elm2Options"
-        options={elm2Options}
-      />
-
-      <FormikControl
-        control="checkbox"
-        label="Lebar jalan"
-        name="elm3Options"
-        options={elm3Options}
-      />
-
-      <FormikControl
-        control="checkbox"
-        label="Permukaan jalan"
-        name="elm4Options"
-        options={elm4Options}
-      />
-
-      <FormikControl
-        control="checkbox"
-        label="Warna bunga"
-        name="elm5Options"
-        options={elm5Options}
-      />
-
-      <FormikControl
-        control="checkbox"
-        label="Jenis kursi"
-        name="elm6Options"
-        options={elm6Options}
-      />
-      <FormikControl
-        control="checkbox"
-        label="Pencahayaan jalan"
-        name="elm7Options"
-        options={elm7Options}
+        label="Karakteristik elemen"
+        name="elmOptions[]"
+        options={elmOptions}
       />
     </div>
   )
